@@ -1,12 +1,13 @@
-import { DUMMY_NEWS } from '@/dummy-news'
+
 import { INews } from '@/interfaces/news'
+import { getNewsItem } from '@/lib/news'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import React from 'react'
 
-const NewsDetailPage = ({params}:{params:{slug:string}}) => {
-  const newsItem = DUMMY_NEWS.find(newsItem => newsItem.slug === params.slug) as INews
+const NewsDetailPage = async ({params}:{params:{slug:string}}) => {
+  const newsItem = await getNewsItem(params.slug) as INews
 
   if(!newsItem) {
     notFound()

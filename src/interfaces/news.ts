@@ -1,4 +1,5 @@
 export interface INews{
+    year: any;
     id: string,
     slug: string,
     title: string,
