@@ -12,7 +12,7 @@ const ImagePage = ({params}:{params:{slug:string}}) => {
   }
   return (
     <div className='fullscreen-image'>
-        <Image src={`/images/news/${newsItem.image}`} alt={newsItem.title} width={1000} height={1000}/>
+        <Image src={`/images/news/${newsItem.image}`} alt={newsItem.title} width={500} height={1000}/>
     </div>
   )
 }
